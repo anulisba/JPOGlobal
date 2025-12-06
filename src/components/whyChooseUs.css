@@ -1,0 +1,289 @@
+.why-choose-container {
+    width: 100%;
+    padding: 5rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.why-choose-background {
+    width: 100%;
+    max-width: 1400px;
+    border-radius: 24px;
+    padding: 4rem 3rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.why-choose-content {
+    width: 100%;
+}
+
+/* ---------------- MAIN GRID CONTAINER ---------------- */
+.benefits-grid {
+    display: grid;
+    gap: 2.5rem;
+}
+
+/* ---------------- LARGE SCREENS (≥ 1200px) ---------------- */
+/* 2 rows, 3 columns */
+.benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+}
+
+.grid-heading {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.benefit-card:nth-child(2) {
+    /* Card 01 */
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.benefit-card:nth-child(3) {
+    /* Card 02 */
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.benefit-card:nth-child(4) {
+    /* Card 03 */
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.benefit-card:nth-child(5) {
+    /* Card 04 */
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.benefit-card:nth-child(6) {
+    /* Card 05 */
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+/* ---------------- MEDIUM SCREENS (768px - 1199px) ---------------- */
+/* 3 rows, 2 columns */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto auto;
+    }
+
+    .grid-heading {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .benefit-card:nth-child(2) {
+        /* Card 01 */
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .benefit-card:nth-child(3) {
+        /* Card 02 */
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .benefit-card:nth-child(4) {
+        /* Card 03 */
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .benefit-card:nth-child(5) {
+        /* Card 04 */
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    .benefit-card:nth-child(6) {
+        /* Card 05 */
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+}
+
+/* ---------------- SMALL SCREENS (< 768px) ---------------- */
+/* 1 item per row */
+@media (max-width: 767px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        /* Let rows auto-create based on content */
+        gap: 2rem;
+    }
+
+    /* Remove all grid positioning for small screens */
+    .grid-heading,
+    .benefit-card:nth-child(2),
+    .benefit-card:nth-child(3),
+    .benefit-card:nth-child(4),
+    .benefit-card:nth-child(5),
+    .benefit-card:nth-child(6) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .grid-heading {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .section-title {
+        font-size: 2.3rem;
+    }
+
+    .why-choose-background {
+        padding: 3rem 2rem;
+    }
+}
+
+/* ---------------- COMMON STYLES ---------------- */
+.grid-heading .section-title {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    color: #555;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* ---------------- CARDS ---------------- */
+.benefit-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 2.2rem;
+    border: 1px solid #eaeaea;
+    position: relative;
+    transition: 0.3s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-number-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    margin-bottom: 1.6rem;
+}
+
+.benefit-number {
+    font-size: 2.4rem;
+    font-weight: 200;
+    color: var(--secondary-color);
+}
+
+.number-line {
+    flex: 1;
+    height: 1px;
+    background: #2563eb33;
+}
+
+.benefit-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.benefit-highlight {
+    font-size: 0.75rem;
+    background: #222;
+    color: #fff;
+    padding: 0.35rem 0.9rem;
+    border-radius: 15px;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+.benefit-description {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.benefit-hover-indicator {
+    height: 3px;
+    width: 100%;
+    background: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.4s;
+}
+
+.benefit-card:hover .benefit-hover-indicator {
+    transform: scaleX(1);
+}
+
+/* ---------------- RESPONSIVE ADJUSTMENTS ---------------- */
+@media (max-width: 1199px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .why-choose-background {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-title {
+        font-size: 2.3rem;
+    }
+
+    .why-choose-container {
+        padding: 3rem 1.5rem;
+    }
+
+    .why-choose-background {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .benefit-card {
+        padding: 1.8rem;
+    }
+}
+
+/* Extra-small screens */
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.9rem !important;
+    }
+
+    .section-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .benefit-title {
+        font-size: 1.2rem;
+    }
+
+    .benefit-number {
+        font-size: 2rem;
+    }
+
+    .benefit-card {
+        padding: 1.5rem;
+    }
+
+    .why-choose-container {
+        padding: 2rem 1rem;
+    }
+}

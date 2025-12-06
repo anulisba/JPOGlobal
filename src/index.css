@@ -1,0 +1,41 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Global font settings */
+html,
+body {
+  font-family: 'DM Sans', sans-serif !important;
+  background-color: white !important;
+}
+
+/* Headings use Encode Sans */
+h1,
+h2,
+h3 {
+  font-family: 'Encode Sans Semi Expanded', sans-serif !important;
+}
+
+/* Optional if you want h4, h5, h6 also the same */
+h4,
+h5,
+h6 {
+  font-family: 'DM Sans', sans-serif;
+  /* or change to Encode Sans if needed */
+}
+
+/* Your existing color variables */
+:root {
+  --primary-color: #00123b;
+  --secondary-color: #00a7ff;
+  --accent-color: #2c3e50;
+  --text-light: #f0f0f0;
+  --text-mid: #cccccc;
+  --text-dark: #333;
+  --text-muted: #7f8c8d;
+  --subtle-grey: #94a3b8;
+  --border-light: rgba(240, 240, 240, 0.1);
+  --border-grey: #e2e8f0;
+  --background-dark: #1a1a1a;
+  --background-light: #ffffff;
+  --overlay-dark: rgba(0, 0, 0, 0.7);
+}

@@ -1,0 +1,475 @@
+.jpo-splash-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background-light);
+    /* White */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    text-align: center;
+}
+
+/* LOGO */
+.jpo-splash-logo {
+    width: 110px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* COMPANY NAME */
+.jpo-splash-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    /* Deep Blue */
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* TAGLINE */
+.jpo-splash-tagline {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    /* Light Blue */
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .jpo-splash-logo {
+        width: 85px;
+    }
+
+    .jpo-splash-title {
+        font-size: 1.8rem;
+    }
+
+    .jpo-splash-tagline {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Contact Popup Styles */
+.contact-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.contact-popup-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.contact-popup-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s;
+}
+
+.contact-popup-close-btn:hover {
+    color: #333;
+}
+
+.contact-popup-box h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.contact-popup-box p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.contact-popup-form-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+}
+
+.contact-popup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-popup-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact-popup-form-group {
+    position: relative;
+}
+
+.contact-popup-form-input,
+.contact-popup-form-textarea {
+    width: 100%;
+    padding: 16px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1e293b;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.contact-popup-form-input::placeholder,
+.contact-popup-form-textarea::placeholder {
+    color: #94a3b8;
+    font-weight: 300;
+}
+
+.contact-popup-form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-popup-form-input:focus,
+.contact-popup-form-textarea:focus {
+    outline: none;
+    border-bottom-color: var(--accent-color);
+}
+
+.contact-popup-input-highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.contact-popup-form-input:focus~.contact-popup-input-highlight,
+.contact-popup-form-textarea:focus~.contact-popup-input-highlight {
+    width: 100%;
+}
+
+.contact-popup-submit-btn {
+    position: relative;
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 10px 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 2px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-popup-submit-btn span {
+    position: relative;
+    z-index: 2;
+    letter-spacing: 0.5px;
+}
+
+.contact-popup-send-icon {
+    position: relative;
+    z-index: 2;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-popup-btn-hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--accent-color);
+    color: white;
+    transition: width 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1;
+}
+
+.contact-popup-submit-btn:hover .contact-popup-btn-hover-effect {
+    width: 100%;
+}
+
+.contact-popup-submit-btn:hover {
+    color: white;
+}
+
+.contact-popup-submit-btn:hover .contact-popup-send-icon {
+    transform: translateX(5px);
+}
+
+/* Success Message */
+.contact-popup-success-message {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.contact-popup-success-icon {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.contact-popup-success-message h3 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.contact-popup-success-message p {
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1.7;
+    opacity: 0.9;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.location-select-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.location-btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.location-btn.dubai,
+.location-btn.india {
+    background-color: transparent;
+    border: 1px solid var(--text-dark);
+    color: var(--text-dark);
+}
+
+.location-btn.dubai:hover,
+.location-btn.india:hover {
+    background-color: var(--text-dark);
+    color: white;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-popup-close-btn {
+        right: 5px;
+        top: 5px;
+    }
+
+    .contact-popup-box h2 {
+
+        font-size: 1.4rem;
+        margin-right: 10px;
+    }
+
+    .contact-popup-box p {
+        font-size: 14px;
+    }
+
+    .contact-popup-form-row {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .contact-popup-box {
+        padding: 20px;
+    }
+
+    .contact-popup-form-textarea {
+
+        min-height: 50px;
+    }
+
+    .contact-popup-form-input,
+    .contact-popup-form-textarea {
+
+        padding: 6px 0;
+
+    }
+
+}
+
+section#home {
+    width: 100%;
+    position: relative;
+}
+
+/* LANDING PAGE CONTAINER */
+.landing-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 80px;
+    gap: 40px;
+}
+
+.welcome {
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.welcome span {
+    color: #00a7ff;
+    font-weight: 700;
+}
+
+.landing-title {
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 800;
+    color: #00123b;
+    margin: 20px 0;
+}
+
+.landing-desc {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #444;
+    max-width: 550px;
+    line-height: 1.6;
+}
+
+.landing-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.landing-img {
+    width: 100%;
+    max-width: 520px;
+
+}
+
+/* --- Subtle Float Animation for Right Side Image --- */
+/* @keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+} */
+
+/* --- Fade Animations --- */
+.animate-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.animate-fade {
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    .landing-section {
+        padding: 50px 40px;
+    }
+
+    .landing-title {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .landing-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .landing-left {
+        order: 2;
+    }
+
+    .landing-right {
+        order: 1;
+    }
+
+    .landing-img {
+        max-width: 420px;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-section {
+        padding: 40px 20px;
+    }
+
+    .landing-title {
+        font-size: 1.8rem;
+    }
+
+    .landing-desc {
+        font-size: 1rem;
+    }
+
+    .welcome {
+        font-size: 1.2rem;
+    }
+}

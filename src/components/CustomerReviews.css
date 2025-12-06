@@ -1,0 +1,250 @@
+.reviews-section {
+    background-color: var(--light-bg);
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-header {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.section-title-line {
+    height: 1px;
+    background: var(--light-text);
+    opacity: 0.3;
+    flex-grow: 1;
+}
+
+.section-subtitle {
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0 1.5rem;
+    font-weight: 500;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin: 1.5rem 0;
+    letter-spacing: -0.5px;
+}
+
+.section-description {
+    color: var(--light-text);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.custom-arrow {
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+.custom-arrow:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.custom-arrow.left {
+    left: 50px;
+}
+
+.custom-arrow.right {
+    right: 50px;
+}
+
+
+.carousel-indicators {
+    bottom: -50px;
+}
+
+.carousel-indicators [data-mdb-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(58, 76, 74, 0.3);
+    margin: 0 5px;
+    border: none;
+}
+
+.carousel-indicators .active {
+    background-color: var(--secondary-color);
+}
+
+.review-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 2rem;
+    height: 100%;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.03);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.review-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--secondary-color);
+    padding: 3px;
+}
+
+.review-titles {
+    flex: 1;
+}
+
+.review-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    color: var(--primary-color);
+}
+
+.review-role {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.review-content {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.review-line {
+    width: 3px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.review-text {
+    flex: 1;
+}
+
+.review-text p {
+    color: var(--light-text);
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin: 0;
+    position: relative;
+}
+
+.quote-icon {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    position: absolute;
+    top: -5px;
+    left: -25px;
+    opacity: 0.3;
+}
+
+.review-rating {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.2rem;
+}
+
+.star-icon {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1199px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .review-card {
+        padding: 1.8rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .reviews-section {
+        padding: 4rem 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .carousel-control-prev {
+        left: 0;
+    }
+
+    .carousel-control-next {
+        right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .section-description {
+        font-size: 0.95rem;
+    }
+
+    .review-card {
+        padding: 1.5rem;
+    }
+
+    .review-avatar {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 575px) {
+    .section-subtitle {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        margin: 0 1rem;
+    }
+
+    .review-content {
+        gap: 1rem;
+    }
+}

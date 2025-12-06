@@ -1,0 +1,696 @@
+/* ServiceDetail.css */
+.service-detail-container {
+    background: #fff;
+    color: #222;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.service-detail-hero {
+    position: relative;
+    text-align: center;
+    padding: 150px 20px 100px;
+    color: #fff;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.service-detail-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(31, 31, 31, 0.8), rgba(0, 0, 0, 0.7));
+    z-index: 1;
+}
+
+.hero-overlay-service {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.service-detail-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.ine {
+    width: 80px;
+    /* length of the line */
+    height: 5px;
+    /* thickness */
+    background-color: #0070c0;
+    /* blue color */
+    margin: 10px auto;
+    /* centers it under the heading */
+    border-radius: 5px;
+    /* optional: rounded edges */
+}
+
+.service-detail-hero p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+/* Service Navigation */
+.service-navigation {
+    padding: 60px 20px;
+    background: #f8faff;
+}
+
+.service-navigation .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-tabs-desktop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.service-tab {
+    padding: 12px 24px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #0070c0;
+    color: #0070c0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-tab:hover {
+    background: transparent;
+    border: 2px solid #0070c0;
+    color: #002b5b;
+    border-radius: 8px;
+}
+
+.service-tab.active {
+    background: transparent;
+    border: 2px solid #0070c0;
+    color: #002b5b;
+    border-radius: 8px;
+}
+
+/* Service Details Section */
+.service-details-section {
+    padding: 80px 20px;
+}
+
+.service-details-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.service-image-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.service-detail-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 43, 91, 0.1);
+}
+
+.service-text-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.service-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.service-features {
+    background: #f8faff;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.service-features h3 {
+    color: #002b5b;
+    margin-bottom: 15px;
+}
+
+.service-features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.service-features li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.service-features li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #0070c0;
+    font-weight: bold;
+}
+
+/* Mobile accordion styles */
+.service-tabs-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobile-service-item {
+    width: 100%;
+}
+
+.mobile-service-details {
+    margin-top: 15px;
+    background: #f8faff;
+    padding-right: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobile-service-details .service-image-container {
+    width: 100%;
+}
+
+.desktop-only {
+    display: block;
+}
+
+/* Responsive toggling */
+@media (max-width: 768px) {
+    .service-tabs-desktop {
+        display: none;
+    }
+
+    .service-tabs-mobile {
+        display: flex;
+    }
+
+    .mobile-service-item .service-tab {
+        width: 100%;
+        text-align: left;
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* Workflow Section */
+/* -------------------------
+   Workflow Section Styling
+--------------------------*/
+.workflow-section {
+    padding: 70px 0;
+    background: #f8faff;
+    /* very light blue/grey */
+}
+
+.workflow-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.workflow-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #001a4d;
+    /* deep professional blue */
+    margin-bottom: 10px;
+}
+
+.workflow-line {
+    width: 70px;
+    height: 3px;
+    background: #0066cc;
+    /* blue accent */
+    margin: 0 auto 25px auto;
+    border-radius: 2px;
+}
+
+.workflow-intro {
+    max-width: 650px;
+    margin: 0 auto 50px auto;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.workflow-service-name {
+    color: #004a99;
+    font-weight: 600;
+}
+
+/* Workflow Steps Grid */
+.workflow-steps {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Individual Step Card */
+.workflow-step {
+    background: #ffffff;
+    border: 1px solid #e3e8f0;
+    padding: 25px 20px;
+    border-radius: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.workflow-step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    border-color: #d5e4ff;
+}
+
+/* Step Number */
+.step-number {
+    min-width: 38px;
+    height: 38px;
+    background: #eaf2ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #0055cc;
+    font-size: 1rem;
+}
+
+/* Step Text */
+.step-text-wrapper {
+    text-align: left;
+}
+
+.step-text {
+    margin: 0;
+    font-size: 0.98rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .workflow-heading {
+        font-size: 1.7rem;
+    }
+
+    .workflow-step {
+        padding: 20px;
+    }
+
+    .step-number {
+        min-width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Why Choose Section */
+.why-choose-service {
+    padding: 80px 20px;
+}
+
+.why-choose-service .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.why-choose-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.benefit-item {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 43, 91, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-item h4 {
+    color: #002b5b;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.benefit-item p {
+    color: #555;
+    margin: 0;
+    font-size: 1rem;
+}
+
+
+
+.service-name-line {
+    width: 80px;
+    height: 4px;
+    margin-bottom: 10px;
+    background: #0070c0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .service-detail-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .service-detail-hero p {
+        font-size: 1.1rem;
+    }
+
+    .service-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-detail-hero {
+        padding: 120px 20px 80px;
+    }
+
+    .workflow-steps {
+        margin-left: 10px;
+    }
+
+    .service-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-tab {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .workflow-steps:before {
+        left: 30px;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .step-content h4 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-detail-hero h1 {
+        font-size: 2rem;
+    }
+
+    .service-tabs-desktop {
+        display: none;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.service-page-plans-section {
+    padding: 80px 80px;
+    background: linear-gradient(to bottom, #333 0%, #333 45%, transparent 45%);
+    position: relative;
+}
+
+.service-page-plans-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    background: url("https://res.cloudinary.com/dpo91btlc/image/upload/v1758446708/Untitled_design_12_y2nfi3.png") center/cover no-repeat;
+    opacity: 1;
+    z-index: 0;
+}
+
+.service-page-plans-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.service-page-plans-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.service-page-plans-sub {
+    color: #3db4ff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.service-page-plans-title {
+    color: #fff;
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.service-page-plans-desc {
+    color: #ccc;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.service-page-plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-page-plan-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-page-plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.service-page-plan-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #00a8ff 0%, #0077cc 100%);
+}
+
+.service-page-plan-icon {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    margin: 0 auto 20px;
+    color: #00a8ff;
+}
+
+.service-page-plan-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #00123b;
+}
+
+.service-page-plan-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #00a8ff;
+    margin-bottom: 15px;
+}
+
+.service-page-plan-desc {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.service-page-plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    text-align: left;
+}
+
+.service-page-plan-feature {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #555;
+    font-size: 1rem;
+}
+
+.service-page-plan-feature:last-child {
+    border-bottom: none;
+}
+
+.service-page-plan-btn {
+    background: #333;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.service-page-plan-btn:hover {
+    background: #00a8ff;
+    transform: translateY(-2px);
+}
+
+/* Animations */
+.service-page-animate-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: service-page-fadeUp 1s ease forwards;
+}
+
+.service-page-animate-fade {
+    opacity: 0;
+    animation: service-page-fadeIn 1.2s ease forwards;
+}
+
+.service-page-fade-up {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: service-page-fadeUp 0.9s ease forwards;
+}
+
+@keyframes service-page-fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes service-page-fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .service-page-plans-section {
+        padding: 60px 40px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+
+    .service-page-plans-section {
+        padding: 40px 20px;
+    }
+
+    .service-page-plans-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-page-plans-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .service-page-plans-title {
+        font-size: 1.8rem;
+    }
+
+    .service-page-plan-card {
+        padding: 30px 20px;
+    }
+}

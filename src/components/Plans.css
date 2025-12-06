@@ -1,0 +1,156 @@
+.package-section {
+    width: 100%;
+    background: linear-gradient(to bottom,
+            #333 0%,
+            #333 45%,
+            transparent 45%);
+    position: relative;
+    padding-bottom: 80px;
+}
+
+/* Background Image Bottom Half */
+.package-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    /* background: url("https://res.cloudinary.com/dpo91btlc/image/upload/v1758446708/Untitled_design_12_y2nfi3.png") center/cover no-repeat; */
+    opacity: 1;
+    /* white overlay effect */
+    z-index: 0;
+}
+
+/* TOP TEXT */
+.package-top {
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.package-sub {
+    color: #3db4ff;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.package-title {
+    color: #fff;
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-top: 8px;
+}
+
+/* CARD GRID */
+.package-card-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+/* CARDS */
+.package-card {
+    width: 300px;
+    background: #fff;
+    padding: 40px 25px;
+    border-radius: 35px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.package-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ICON */
+.package-icon {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    margin: 0 auto 15px;
+    color: #333;
+}
+
+/* TEXT */
+.package-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.package-desc {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.package-btn {
+    background: #333;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.package-btn:hover {
+    background: #000;
+}
+
+/* ANIMATIONS */
+.fade-up {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: fadeUp 0.9s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .package-card-container {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .package-top {
+        padding-bottom: 10px;
+    }
+
+    .package-title {
+        text-align: left;
+        font-size: 2rem;
+    }
+
+    .package-sub {
+        text-align: left;
+    }
+
+    .package-card {
+        width: 90%;
+    }
+}

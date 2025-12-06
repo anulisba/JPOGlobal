@@ -1,0 +1,399 @@
+/* Modern Workflow Section */
+.jpo-workflow-section {
+    background: white;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.jpo-workflow-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Header Styles */
+.jpo-workflow-header {
+    text-align: center;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jpo-workflow-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.jpo-workflow-tag-line {
+    width: 40px;
+    height: 2px;
+    background: var(--secondary-color);
+}
+
+.jpo-workflow-tag span {
+    color: #009cff;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.jpo-workflow-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 0px;
+}
+
+.jpo-text-accent {
+    color: var(--secondary-color);
+    position: relative;
+}
+
+.jpo-text-accent::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--secondary-color);
+    opacity: 0.3;
+}
+
+.jpo-workflow-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-mid);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Workflow Steps Container */
+.jpo-workflow-steps-container {
+    position: relative;
+    padding: 40px 0;
+}
+
+.jpo-workflow-connection-line {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+.jpo-workflow-connection-line-desktop {
+    top: 50%;
+    left: 50px;
+    right: 50px;
+    height: 2px;
+    transform: translateY(-50%);
+}
+
+.jpo-workflow-connection-line-mobile {
+    display: none;
+    left: 50%;
+    top: 100px;
+    bottom: 100px;
+    width: 2px;
+    transform: translateX(-50%);
+}
+
+.jpo-workflow-progress-line {
+    height: 100%;
+    width: 100%;
+    background: var(--secondary-color);
+    transform-origin: left;
+}
+
+/* Workflow Steps */
+.jpo-workflow-steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.jpo-workflow-step {
+    position: relative;
+    flex: 1;
+    max-width: 220px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.jpo-step-number {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.jpo-step-icon-wrapper {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 25px;
+    position: relative;
+}
+
+.jpo-step-icon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 167, 255, 0.1);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+.jpo-step-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--text-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.jpo-workflow-step:hover .jpo-step-icon {
+    background: #222;
+    transform: rotateY(180deg);
+}
+
+.jpo-step-content {
+    margin-top: 20px;
+}
+
+.jpo-step-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 12px;
+    min-height: 50px;
+}
+
+.jpo-step-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* Arrow Connector */
+.jpo-step-arrow {
+    position: absolute;
+    top: 50px;
+    right: -40px;
+    color: var(--secondary-color);
+    opacity: 0.3;
+    z-index: 3;
+}
+
+.jpo-arrow-icon {
+    font-size: 24px;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+/* Dot Connectors */
+.jpo-step-connector {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.jpo-step-connector-desktop {
+    top: 50px;
+    right: -20px;
+    width: 40px;
+    height: 2px;
+}
+
+.jpo-step-connector-mobile {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .jpo-workflow-step {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 992px) {
+    .jpo-workflow-steps {
+        flex-wrap: wrap;
+        gap: 60px;
+        justify-content: center;
+    }
+
+    .jpo-workflow-step {
+        flex: 0 0 calc(33.333% - 40px);
+        max-width: 250px;
+    }
+
+    .jpo-workflow-connection-line-desktop {
+        display: none;
+    }
+
+    .jpo-workflow-connection-line-mobile {
+        display: block;
+    }
+
+    .jpo-step-connector-desktop {
+        display: none;
+    }
+
+    .jpo-step-connector-mobile {
+        display: block;
+        bottom: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 60px;
+    }
+
+    .jpo-step-arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .jpo-workflow-section {
+        padding: 60px 20px;
+    }
+
+    .jpo-workflow-title {
+        font-size: 36px;
+    }
+
+    .jpo-workflow-description {
+        font-size: 16px;
+    }
+
+    .jpo-workflow-steps {
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    .jpo-workflow-step {
+        flex: 0 0 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .jpo-step-icon-wrapper {
+        width: 90px;
+        height: 90px;
+    }
+
+    .jpo-step-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 26px;
+    }
+
+    .jpo-step-title {
+        font-size: 20px;
+        min-height: auto;
+    }
+
+    .jpo-workflow-connection-line-mobile {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .jpo-workflow-title {
+        font-size: 28px;
+    }
+
+    .jpo-workflow-tag span {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .jpo-step-icon-wrapper {
+        width: 80px;
+        height: 80px;
+    }
+
+    .jpo-step-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 22px;
+    }
+
+    .jpo-step-title {
+        font-size: 18px;
+    }
+
+    .jpo-step-description {
+        font-size: 13px;
+    }
+}
+
+/* Animation for progress line fill */
+.jpo-workflow-progress-line {
+    position: relative;
+    overflow: hidden;
+}
+
+.jpo-workflow-progress-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
