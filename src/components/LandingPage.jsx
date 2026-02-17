@@ -3,9 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './LandingPage.css';
 import Header from './Header';
-import bg1 from '../assets/bg.jpg'
-import bg2 from '../assets/bg1.jpg'
-import bg3 from '../assets/bg2.jpg'
+import bg1 from '../assets/bg.jpg';
+import bg2 from '../assets/bg1.jpg';
+import bg3 from '../assets/bg2.png';
 import AboutUs from './AboutUs';
 import OurServices from './Services';
 import ReportCounter from './ReportCounter';
@@ -13,14 +13,15 @@ import ProjectSection from './ProjectSection';
 import OurWorkFlow from './OurServices';
 import CustomerReviews from './CustomerReviews';
 import Footer from './Footer';
-import { FaInstagram, FaWhatsapp, FaFacebookF } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp, FaFacebookF } from 'react-icons/fa';
 import ContactLandingSection from './ContactLanding';
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.png';
 import { useNavigate } from 'react-router-dom';
 import { FaPaperPlane } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
-import lbg from '../assets/lbg.png';
+// import lbg from '../assets/lbg.png'; // No longer needed
 import Plans from './Plans';
+
 const SplashScreen = ({ onComplete }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -32,7 +33,6 @@ const SplashScreen = ({ onComplete }) => {
 
     return (
         <div className="jpo-splash-container">
-
             {/* LOGO */}
             <motion.img
                 src={logo}
@@ -65,7 +65,6 @@ const SplashScreen = ({ onComplete }) => {
         </div>
     );
 };
-
 
 const ContactPopup = ({ onClose, onSelectLocation }) => {
     return (
@@ -112,19 +111,38 @@ const ContactPopup = ({ onClose, onSelectLocation }) => {
     );
 };
 
-
-
 const LandingPage = () => {
     const [showSplash, setShowSplash] = useState(false);
     const [showContent, setShowContent] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showPopup, setShowPopup] = useState(false);
-    const images = [bg1, bg2, bg3];
     const navigate = useNavigate();
 
+    // Slide data: background images and text
+    const slides = [
+        {
+            welcome: 'Welcome To <span>JPO GLOBAL</span>',
+            title: 'We Specialize in Accounting<br />and Financial',
+            desc: 'JPO Global provides end-to-end financial solutions including accounting, bookkeeping, VAT & corporate tax compliance, audit support, and strategic financial advisory — helping businesses across the UAE achieve accuracy, compliance, and sustainable growth.',
+            bgImage: bg1,
+        },
+        {
+            welcome: 'Expertise You <span>Can Trust</span>',
+            title: 'Tax & Audit Services<br />for Your Business',
+            desc: 'Our team of certified professionals ensures that your business remains compliant with the latest regulations while optimizing your financial performance.',
+            bgImage: bg2,
+        },
+        {
+            welcome: 'Global Reach, <span>Local Expertise</span>',
+            title: 'Strategic Advisory<br />for Sustainable Growth',
+            desc: 'From startups to established enterprises, we provide tailored financial strategies that drive success in today\'s competitive market.',
+            bgImage: bg3,
+        },
+    ];
+
     const contactus = () => {
-        navigate('/contact-us')
-    }
+        navigate('/contact-us');
+    };
 
     useEffect(() => {
         const hasSeenSplash = localStorage.getItem('hasSeenSplash');
@@ -132,22 +150,20 @@ const LandingPage = () => {
             setShowSplash(true);
         } else {
             setShowSplash(false);
-            // Don't set showContent here - will be handled by the next useEffect
         }
     }, []);
 
     useEffect(() => {
         if (!showSplash) {
-            // Set showContent to true only when splash screen is hidden
             setShowContent(true);
 
             const interval = setInterval(() => {
-                setCurrentIndex((prev) => (prev + 1) % images.length);
-            }, 5000);
+                setCurrentIndex((prev) => (prev + 1) % slides.length);
+            }, 3000); // 3 seconds per slide
 
             return () => clearInterval(interval);
         }
-    }, [showSplash]);
+    }, [showSplash, slides.length]);
 
     useEffect(() => {
         if (showContent) {
@@ -177,7 +193,7 @@ const LandingPage = () => {
 
     const handleSplashComplete = () => {
         setShowSplash(false);
-        localStorage.setItem('hasSeenSplash', 'true'); // important fix
+        localStorage.setItem('hasSeenSplash', 'true');
     };
 
     return (
@@ -196,37 +212,70 @@ const LandingPage = () => {
                         {showContent && (
                             <>
                                 <Header />
+
+                                {/* LANDING SECTION WITH BACKGROUND SLIDER */}
                                 <section className="landing-section">
-
-                                    <div className="landing-left animate-fade-up">
-                                        <h4 className="welcome">
-                                            Welcome To <span>JPO GLOBAL</span>
-                                        </h4>
-
-                                        <h1 className="landing-title">
-                                            We Specialize in Accounting<br /> and Financial
-                                        </h1>
-
-                                        <p className="landing-desc">
-                                            JPO Global provides end-to-end financial solutions including
-                                            accounting, bookkeeping, VAT & corporate tax compliance, audit
-                                            support, and strategic financial advisory — helping businesses
-                                            across the UAE achieve accuracy, compliance, and sustainable growth.
-                                        </p>
-                                    </div>
-
-                                    <div className="landing-right animate-fade">
-                                        <img src={lbg} alt="Landing Visual" className="landing-img" />
+                                    <div className="slider-wrapper">
+                                        <AnimatePresence>
+                                            <motion.div
+                                                key={currentIndex}
+                                                className="slide"
+                                                initial={{ x: '100%' }}
+                                                animate={{ x: 0 }}
+                                                exit={{ x: '-100%' }}
+                                                transition={{ duration: 1, ease: 'easeInOut' }}
+                                                style={{
+                                                    backgroundImage: `url(${slides[currentIndex].bgImage})`,
+                                                }}
+                                            >
+                                                <div className='slide-overlay'>
+                                                    <div className="slide-content">
+                                                        <h4
+                                                            className="welcome"
+                                                            dangerouslySetInnerHTML={{ __html: slides[currentIndex].welcome }}
+                                                        />
+                                                        <h1
+                                                            className="landing-title"
+                                                            dangerouslySetInnerHTML={{ __html: slides[currentIndex].title }}
+                                                        />
+                                                        <p className="landing-desc">{slides[currentIndex].desc}</p>
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        </AnimatePresence>
                                     </div>
                                 </section>
+                                {/* FINANCE SCROLLER SECTION */}
+                                <section className="finance-scroller">
+                                    <div className="scroller-wrapper">
+                                        <div className="scroller-content">
+                                            <span>
+                                                • Accounting & Bookkeeping • Taxation Services (VAT & Corporate Tax) •
+                                                Audit & Assurance • Financial Planning & Analysis (FP&A) •
+                                                CFO & Strategic Financial Advisory • Payroll Management •
+                                                Business Setup & Compliance (Mainland & Free Zone) •
+                                            </span>
+
+                                            <span>
+                                                • Accounting & Bookkeeping • Taxation Services (VAT & Corporate Tax) •
+                                                Audit & Assurance • Financial Planning & Analysis (FP&A) •
+                                                CFO & Strategic Financial Advisory • Payroll Management •
+                                                Business Setup & Compliance (Mainland & Free Zone) •
+                                            </span>
+                                        </div>
+                                    </div>
+                                </section>
+
 
                                 <section id='about-us'>
                                     <AboutUs />
                                 </section>
+                                {/* <ReportCounter /> */}
                                 <OurServices />
-                                <section id='projects'>
+
+                                {/* <section id='projects'>
                                     <Plans />
-                                </section>
+                                </section> */}
                                 {/* <section id='workflow'>
                                     <OurWorkFlow />
                                 </section>

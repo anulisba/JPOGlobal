@@ -124,7 +124,7 @@
 
     .about-us-container {
         flex-direction: column;
-        padding: 10px;
+        gap: 20px;
     }
 
     .overlay-box {
@@ -139,7 +139,7 @@
 
     .about-description {
         font-size: 1rem;
-        padding: 0 10px;
+        margin-bottom: 10px;
     }
 
     .blue-circle {

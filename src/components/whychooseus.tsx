@@ -9,40 +9,56 @@ const WhyChooseUs = () => {
     const benefits = [
         {
             number: "01",
-            title: "Qualified Financial Experts",
-            description: "A team of certified accountants, tax specialists, and financial advisors with deep knowledge of UAE regulations.",
-            highlight: "Professional Expertise"
+            title: "Cost-Effective Accounting",
+            description: "Reduce operational costs while receiving high-quality accounting and bookkeeping services from experienced professionals.",
+            highlight: "Optimized Business Costs"
         },
         {
             number: "02",
-            title: "Compliance With UAE Laws",
-            description: "End-to-end support for VAT, corporate tax, audit requirements, and financial reporting aligned with IFRS standards.",
-            highlight: "Regulatory Accuracy"
+            title: "Specialized Financial Expertise",
+            description: "Gain support from qualified accounting professionals with deep knowledge of Dubai regulations and global standards.",
+            highlight: "Professional Expertise"
         },
         {
             number: "03",
-            title: "Data-Driven Insights",
-            description: "Advanced financial analysis, forecasting, KPI tracking, and monthly MIS reporting to support informed decision-making.",
-            highlight: "Strategic Intelligence"
+            title: "Modern Accounting Technology",
+            description: "Utilize advanced cloud-based systems and automation tools for accurate and real-time financial reporting.",
+            highlight: "Smart Financial Systems"
         },
         {
             number: "04",
-            title: "Personalized Advisory",
-            description: "Tailored accounting, tax, and CFO-level guidance designed to meet the specific needs of SMEs, startups, and enterprises.",
-            highlight: "Customized Solutions"
+            title: "Complete Accounting Support",
+            description: "Receive end-to-end services covering bookkeeping, VAT filing, compliance, and financial reporting needs.",
+            highlight: "All-in-One Solutions"
         },
         {
             number: "05",
-            title: "Reliability & Transparency",
-            description: "Consistent, timely, and transparent service delivery built on trust, confidentiality, and long-term client partnerships.",
-            highlight: "Trusted Partnership"
+            title: "Secure Financial Management",
+            description: "Ensure your financial information remains protected through strict confidentiality standards and secure systems.",
+            highlight: "Secure & Reliable"
         }
     ];
 
 
-    const cardAnimate = {
-        hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 90 } }
+
+    // Parent container animation (stagger)
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.2
+            }
+        }
+    };
+
+    // Card animation
+    const cardVariants = {
+        hidden: { opacity: 0, y: 40 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6, ease: "easeOut" }
+        }
     };
 
     return (
@@ -55,45 +71,66 @@ const WhyChooseUs = () => {
                 }}
             >
                 <section className="why-choose-contents">
-                    {/* Main Grid Container */}
-                    <div className="benefits-grid">
-                        {/* Heading and Subheading */}
+
+                    <motion.div
+                        className="benefits-grid"
+                        variants={containerVariants}
+                        initial="hidden"
+                        animate={isInView ? "visible" : "hidden"}
+                    >
+
+                        {/* Heading */}
                         <motion.div
                             className="grid-heading"
-                            initial="hidden"
-                            animate={isInView ? "visible" : "hidden"}
-                            variants={cardAnimate}
+                            variants={cardVariants}
                         >
-                            <p className="service-sub">WHY JPO GLOBAL</p>
+                            <p className="service-sub">WHY OUTSOURCE?</p>
+
                             <h2 className="service-title">
-                                Excellence in every detail, commitment in every service
+                                Smarter Accounting Solutions
                             </h2>
+
+                            <p className="why-sub-description">
+                                Outsourcing your accounting and bookkeeping allows your business to reduce costs,
+                                improve operational efficiency, and gain access to expert financial guidance.
+                                With JPO Global, you receive reliable, compliant, and technology-driven support
+                                designed to help your business grow with confidence.
+                            </p>
                         </motion.div>
 
-                        {/* All Benefit Cards */}
-                        {benefits.map((benefit, index) => (
+
+                        {/* Benefit Cards */}
+                        {benefits.map((benefit) => (
                             <motion.div
                                 key={benefit.number}
                                 className="benefit-card"
-                                initial="hidden"
-                                animate={isInView ? "visible" : "hidden"}
-                                variants={cardAnimate}
-                                style={{ transitionDelay: `${index * 0.1}s` }}
+                                variants={cardVariants}
                             >
                                 <div className="benefit-number-wrapper">
-                                    <span className="benefit-number">{benefit.number}</span>
+                                    <span className="benefit-number">
+                                        {benefit.number}
+                                    </span>
                                     <div className="number-line"></div>
                                 </div>
 
                                 <div className="benefit-content">
-                                    <h3 className="benefit-title">{benefit.title}</h3>
-                                    <span className="benefit-highlight">{benefit.highlight}</span>
-                                    <p className="benefit-description">{benefit.description}</p>
+                                    <h3 className="benefit-title">
+                                        {benefit.title}
+                                    </h3>
+                                    <span className="benefit-highlight">
+                                        {benefit.highlight}
+                                    </span>
+                                    <p className="benefit-description">
+                                        {benefit.description}
+                                    </p>
                                 </div>
+
                                 <div className="benefit-hover-indicator"></div>
                             </motion.div>
                         ))}
-                    </div>
+
+                    </motion.div>
+
                 </section>
             </div>
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Services.css";
+import { motion } from "framer-motion";
 import { HiOutlineDocumentReport } from "react-icons/hi";
 import { RiShieldCheckLine } from "react-icons/ri";
 import { MdOutlineCalculate } from "react-icons/md";
@@ -9,26 +10,56 @@ import { useNavigate } from "react-router-dom";
 
 const OurServices = () => {
     const navigate = useNavigate();
+
     const handleKnowmore = () => {
         navigate('/services');
-    }
+    };
+
+    // Parent animation (stagger)
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.25
+            }
+        }
+    };
+
+    // Individual card animation
+    const cardVariants = {
+        hidden: { y: 50, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: { duration: 0.6, ease: "easeOut" }
+        }
+    };
+
     return (
         <section className="services-wrapper">
 
             {/* FIRST ROW */}
-            <div className="services-row-1">
+            <motion.div
+                className="services-row-1"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.2 }}
+            >
 
                 {/* LEFT TEXT SECTION */}
-                <div className="services-left animate-slide">
+                <motion.div className="services-left" variants={cardVariants}>
                     <h4 className="service-sub">Our Services</h4>
                     <h1 className="service-title">
                         Real Solutions,<br />Real Impact
                     </h1>
-                    <button className="know-btn" onClick={handleKnowmore}>Know More</button>
-                </div>
+                    <button className="know-btn" onClick={handleKnowmore}>
+                        Know More
+                    </button>
+                </motion.div>
 
                 {/* CARD 1 */}
-                <div className="service-card bg-gray animate-fade">
+                <motion.div className="service-card bg-gray" variants={cardVariants}>
                     <div className="service-icon"><HiOutlineDocumentReport /></div>
                     <h3 className="service-head">Accounting & Bookkeeping</h3>
                     <p className="service-desc">
@@ -36,58 +67,58 @@ const OurServices = () => {
                         payroll processing, and preparation of financial statements
                         in compliance with UAE IFRS.
                     </p>
-                    <div className="service-arrow">→</div>
-                </div>
+                </motion.div>
 
                 {/* CARD 2 */}
-                <div className="service-card bg-blue animate-fade">
+                <motion.div className="service-card bg-blue" variants={cardVariants}>
                     <div className="service-icon"><RiShieldCheckLine /></div>
                     <h3 className="service-head">Audit & Assurance</h3>
                     <p className="service-desc">
                         Internal & external audits, due diligence, and compliance
                         checks ensuring transparency, accuracy, and adherence to UAE regulations.
                     </p>
-                    <div className="service-arrow">→</div>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
+
 
             {/* SECOND ROW */}
-            <div className="services-row-2">
+            <motion.div
+                className="services-row-2"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.2 }}
+            >
 
-                {/* CARD 3 */}
-                <div className="service-card bg-gray animate-fade">
+                <motion.div className="service-card bg-gray" variants={cardVariants}>
                     <div className="service-icon"><MdOutlineCalculate /></div>
                     <h3 className="service-head">Taxation Services</h3>
                     <p className="service-desc">
                         VAT registration & filing, corporate tax planning, excise tax
                         management, and advisory for complete FTA compliance.
                     </p>
-                    <div className="service-arrow">→</div>
-                </div>
+                </motion.div>
 
-                {/* CARD 4 */}
-                <div className="service-card bg-blue animate-fade">
+                <motion.div className="service-card bg-blue" variants={cardVariants}>
                     <div className="service-icon"><TbReportAnalytics /></div>
                     <h3 className="service-head">Financial Planning & Analysis</h3>
                     <p className="service-desc">
                         Budgeting, forecasting, performance analysis, feasibility
                         studies, and KPI tracking to support strategic growth.
                     </p>
-                    <div className="service-arrow">→</div>
-                </div>
+                </motion.div>
 
-                {/* CARD 5 */}
-                <div className="service-card bg-gray animate-fade">
+                <motion.div className="service-card bg-gray" variants={cardVariants}>
                     <div className="service-icon"><BsGraphUp /></div>
                     <h3 className="service-head">Financial Management & Advisory</h3>
                     <p className="service-desc">
                         CFO services, cash flow optimization, business setup support,
                         and strategic financial advisory for long-term stability.
                     </p>
-                    <div className="service-arrow">→</div>
-                </div>
+                </motion.div>
 
-            </div>
+            </motion.div>
+
         </section>
     );
 };

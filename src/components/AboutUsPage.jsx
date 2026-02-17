@@ -7,20 +7,19 @@ import Footer from "./Footer";
 import WhyChooseUs from "./whychooseus";
 const founders = [
     {
-        name: "Sarah Johnson",
-        role: "Co-Founder & CEO",
-        image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1765012683/portrait-businessman-smiling_razw3t.jpg",
+        name: "Reshma Antony",
+        role: "Managing Director",
+        image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1765012655/inspiring-new-boss_awi7e2.jpg", // replace with your path
+        description:
+            "Reshma Antony is a business and financial advisory leader with multi-entity experience across consulting, taxation, compliance, and investment services. She focuses on governance-driven structuring and sustainable business growth for startups, SMEs, and enterprises."
     },
     {
-        name: "Michael Chen",
-        role: "Co-Founder & COO",
-        image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1765012655/inspiring-new-boss_awi7e2.jpg",
-    },
-    {
-        name: "Emily Rodriguez",
-        role: "Co-Founder & CTO",
-        image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1765012655/young-male-entrepreneur-making-eye-contact-against-blue-background_vky8zo.jpg",
-    },
+        name: "CA. Jismon Jose FCA",
+        role: "Chief Consultant",
+        image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1765012655/inspiring-new-boss_awi7e2.jpg", // replace with your path
+        description:
+            "A Chartered Accountant with over 13 years of experience, CA. Jismon Jose specializes in taxation and corporate advisory. He has led complex assignments in direct and indirect taxation, compliance strategy, and regulatory consulting across multiple industries."
+    }
 ];
 
 const AboutUsPage = () => {
@@ -79,7 +78,7 @@ const AboutUsPage = () => {
                 </section>
 
                 {/* Introduction with Diagonal Split Layout */}
-                <section id="about-us" className="about-us-section">
+                <section id="about-us" className="aboutus-page-section">
                     <motion.div
                         className="about-us-container"
                         initial={{ opacity: 0 }}
@@ -92,23 +91,16 @@ const AboutUsPage = () => {
                             <h2 className="about-heading">Excellence You Can Trust</h2>
                             <div className="service-name-line"></div>
                             <p className="about-description">
-                                JPO Global is a UAE-based financial services firm specializing in
-                                Accounting, Bookkeeping, Taxation, Audit Support, Financial Planning,
-                                and Strategic Advisory. With a team of qualified professionals and
-                                deep expertise in UAE regulations, we deliver accurate, compliant, and
-                                technology-driven financial solutions tailored to businesses of all sizes.
-                                <br /><br />
-                                Our mission is to empower organizations with transparent financial insights,
-                                effective tax planning, reliable compliance, and data-driven decision-making.
-                                By combining industry experience with modern cloud-based tools, we ensure
-                                efficiency, integrity, and long-term value for every client.
-                                <br /><br />
-                                At JPO Global, we believe in building relationships that go beyond routine
-                                accounting support. We work closely with entrepreneurs, SMEs, and established
-                                enterprises to understand their operational challenges and financial goals.
-                                Our proactive approach, detailed reporting, and personalized advisory services
-                                enable clients to improve profitability, strengthen internal controls, and
-                                make confident strategic decisions in a rapidly evolving business environment.
+                                JPO Global Business Solutions Pvt. Ltd. is a professionally incorporated company in India providing end-to-end accounting, compliance, outsourcing, and business advisory services to clients across India and international markets.
+                                <br></br>
+                                With a strong foundation built by experienced accounting and financial professionals, JPO Global has established itself as a reliable partner for businesses seeking accurate, timely, and cost-effective professional support.
+                                <br></br>
+                                We operate with a highly skilled expert team based in India along with our operational presence in the UAE, enabling us to serve both domestic and international clients efficiently. Our cross-border expertise helps businesses manage accounting, taxation, compliance, and reporting requirements seamlessly across jurisdictions.
+                                <br></br>
+                                For more than a decade, our outsourcing and professional support services have been delivering consistent value to clients by improving efficiency, reducing operational costs, and ensuring full regulatory compliance. We support startups, SMEs, and established organizations by acting as an extended professional arm of their business.
+                                <br></br>
+                                integrity, confidentiality, and timely service delivery. Our commitment is to provide practical and result-oriented solutions that help businesses focus on growth while we take care of compliance and financial management.
+
                             </p>
 
 
@@ -131,7 +123,7 @@ const AboutUsPage = () => {
                 </section>
 
                 {/* Mission & Vision with Card Layout */}
-                <section className="mission-vision-modern">
+                {/* <section className="mission-vision-modern">
                     <div className="container">
 
 
@@ -188,7 +180,7 @@ const AboutUsPage = () => {
                             </motion.div>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 {/* Clients Section with Logo Grid */}
                 {/* <motion.section
@@ -291,80 +283,43 @@ const AboutUsPage = () => {
 
                 {/* Core Values with Modern Card Layout */}
                 <section className="founders-section">
-                    <div className="container">
-                        <div className="section-header">
-                            <p className="founder-subtitle">
-                                Leadership Team
-
-                            </p>
-                            <h2 className="founder-heading">Meet the visionaries behind our success</h2>
-
-
+                    <div className="f-container">
+                        <div className="founders-header">
+                            <p className="founder-subtitle">Leadership</p>
+                            <h2 className="founder-heading">
+                                Meet Our Leadership Team
+                            </h2>
                         </div>
 
-                        <div className="founders-container">
-                            <div
-                                className="founders-slider"
-                                onMouseEnter={handleMouseEnter}
-                                onMouseLeave={handleMouseLeave}
-                            >
-                                {founders.map((founder, index) => (
-                                    <div
-                                        className={`founder-slide ${index === currentSlide ? 'active' : ''} 
-                         ${index === (currentSlide + 1) % founders.length ? 'next' : ''}
-                         ${index === (currentSlide - 1 + founders.length) % founders.length ? 'prev' : ''}`}
-                                        key={index}
-                                    >
-                                        <div className="founder-card">
-                                            <div className="founder-image">
-                                                <img src={founder.image} alt={founder.name} />
-                                            </div>
-                                            <div className="founder-info">
-                                                <h4>{founder.name}</h4>
-                                                <p className="founder-role">{founder.role}</p>
-                                                <p className="founder-bio">{founder.bio}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <div className="slider-controls">
-                                <button
-                                    className="slider-arrow prev-arrow"
-                                    onClick={handlePrev}
-                                    aria-label="Previous founder"
+                        <div className="founders-wrapper">
+                            {founders.map((founder, index) => (
+                                <div
+                                    className={`founder-card ${index % 2 !== 0 ? "reverse" : ""
+                                        }`}
+                                    key={index}
                                 >
-                                    ←
-                                </button>
-                                <div className="slider-dots">
-                                    {founders.map((_, index) => (
-                                        <button
-                                            key={index}
-                                            className={`dot ${index === currentSlide ? 'active' : ''}`}
-                                            onClick={() => setCurrentSlide(index)}
+                                    <div className="founder-image">
+                                        <img
+                                            src={founder.image}
+                                            alt={founder.name}
                                         />
-                                    ))}
-                                </div>
-                                <button
-                                    className="slider-arrow next-arrow"
-                                    onClick={handleNext}
-                                    aria-label="Next founder"
-                                >
-                                    →
-                                </button>
-                            </div>
+                                    </div>
 
-                            {/* Optional auto-slide indicator */}
-                            {/* <div className="auto-slide-indicator">
-                                <span>Auto-slide: </span>
-                                <button onClick={() => setIsAutoPlaying(!isAutoPlaying)}>
-                                    {isAutoPlaying ? '⏸️ Pause' : '▶️ Play'}
-                                </button>
-                            </div> */}
+                                    <div className="founder-content">
+                                        <h3>{founder.name}</h3>
+                                        <p className="founder-role">
+                                            {founder.role}
+                                        </p>
+                                        <p className="founder-description">
+                                            {founder.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
+
                 <div style={{ marginBottom: "20px" }}></div>
                 <Footer />
             </div>

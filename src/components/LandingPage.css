@@ -343,7 +343,8 @@ section#home {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 60px 80px;
+    background-color: #333;
+    margin-bottom: 0px;
     gap: 40px;
 }
 
@@ -383,7 +384,8 @@ section#home {
 .landing-img {
     width: 100%;
     max-width: 520px;
-
+    object-fit: cover;
+    /* ensures images fill the space nicely */
 }
 
 /* --- Subtle Float Animation for Right Side Image --- */
@@ -429,7 +431,7 @@ section#home {
 /* --- Responsive Design --- */
 @media (max-width: 1024px) {
     .landing-section {
-        padding: 50px 40px;
+        padding: 0;
     }
 
     .landing-title {
@@ -440,7 +442,6 @@ section#home {
 @media (max-width: 768px) {
     .landing-section {
         flex-direction: column;
-        text-align: center;
     }
 
     .landing-left {
@@ -458,7 +459,7 @@ section#home {
 
 @media (max-width: 480px) {
     .landing-section {
-        padding: 40px 20px;
+        padding: 0;
     }
 
     .landing-title {
@@ -472,4 +473,146 @@ section#home {
     .welcome {
         font-size: 1.2rem;
     }
+}
+
+/* Slider wrapper – defines the area and hides overflow */
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    /* Adjust as needed */
+    overflow: hidden;
+}
+
+/* Each slide – absolutely positioned to stack */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 80px;
+    /* matches original left/right padding */
+}
+
+.slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.5));
+    display: flex;
+    align-items: center;
+}
+
+/* Text overlay container */
+.slide-content {
+    padding: 40px;
+    max-width: 600px;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* optional for better contrast */
+}
+
+/* Keep existing text styles but override color for contrast */
+.slide-content .welcome {
+    color: white;
+}
+
+.slide-content .welcome span {
+    color: #00a7ff;
+    /* keep highlight color */
+}
+
+.slide-content .landing-title {
+    color: white;
+}
+
+.slide-content .landing-desc {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slider-wrapper {
+        height: 500px;
+    }
+
+    .slide {
+        padding: 0 40px;
+    }
+
+    .slide-content {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-wrapper {
+        height: 450px;
+    }
+
+    .slide {
+        padding: 0 20px;
+    }
+}
+
+/* ================= FINANCE SCROLLER ================= */
+
+.finance-scroller {
+    width: 100%;
+    border-top: 4px solid var(--text-dark);
+    border-bottom: 2px solid var(--text-dark);
+    background: white;
+    /* Dark finance green */
+    overflow: hidden;
+    padding: 22px 0;
+    position: relative;
+}
+
+.scroller-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.scroller-content {
+    display: flex;
+    width: max-content;
+    animation: scrollText 25s linear infinite;
+}
+
+.scroller-content span {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--text-dark);
+    white-space: nowrap;
+    padding-right: 50px;
+    letter-spacing: 0.5px;
+}
+
+/* Smooth infinite scroll */
+@keyframes scrollText {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .finance-scroller {
+        padding: 15px;
+    }
+
 }

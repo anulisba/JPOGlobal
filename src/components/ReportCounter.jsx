@@ -6,10 +6,10 @@ import './ReportCounter.css';
 
 const ReportCounter = () => {
     const stats = [
-        { value: 40000, label: 'Winning Award' },
-        { value: 18000, label: 'Client Review' },
-        { value: 10000, label: 'Completed Projects' },
-        { value: 20000, label: 'Years Experience' }
+        { value: 10, label: 'Years of Experience' },
+        { value: 500, label: 'Clients Served' },
+        { value: 1000, label: 'Projects Completed' },
+        { value: 2, label: 'Countries of Operation' }
     ];
 
     const { ref, inView } = useInView({

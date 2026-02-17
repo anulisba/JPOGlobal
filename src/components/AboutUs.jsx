@@ -5,55 +5,58 @@ import { useNavigate } from "react-router-dom";
 
 const AboutUs = () => {
     const navigate = useNavigate();
+
     const handleAboutUs = () => {
         navigate('/about-us');
-    }
+    };
+
     return (
         <section id="about-us" className="about-us-section">
-            <motion.div
-                className="about-us-container"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-                viewport={{ once: true }}
-            >
+            <div className="about-us-container">
+
                 {/* Left Image Section */}
-                <div className="image-content">
+                <motion.div
+                    className="image-content"
+                    initial={{ x: -100, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: false, amount: 0.3 }}
+                >
                     <div className="main-image">
                         <img
                             src="https://res.cloudinary.com/dpo91btlc/image/upload/v1765010413/unrecognizable-business-partners-working-with-statistic-charts-businessman-holding-tablet-professional-content-businesswoman-making-notes-statistics-communication-partnership-concept_1_uk30pr.jpg"
                             alt="Excellence"
                         />
-
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Right Text Section */}
-                <div className="about-text-content">
+                <motion.div
+                    className="about-text-content"
+                    initial={{ x: 100, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                >
                     <span className="about-subtitle">About Us</span>
-                    <h2 className="about-heading">Your Trusted Partner in Financial Excellence</h2>
+                    <h2 className="about-heading">
+                        Your Trusted Partner in Financial Excellence
+                    </h2>
                     <div className="service-name-line"></div>
 
                     <p className="about-description">
-                        JPO Global is a UAE-based financial services firm specializing in
-                        Accounting, Bookkeeping, Taxation, Audit Support, Financial Planning,
-                        and Strategic Advisory. With a team of qualified professionals and
-                        deep expertise in UAE regulations, we deliver accurate, compliant, and
-                        technology-driven financial solutions tailored to businesses of all sizes.
-                        <br /><br />
-                        {/* Our mission is to empower organizations with transparent financial insights,
-                        effective tax planning, reliable compliance, and data-driven decision-making.
-                        By combining industry experience with modern cloud-based tools, we ensure
-                        efficiency, integrity, and long-term value for every client. */}
+                        JPO Global Business Solutions Pvt. Ltd. provides end-to-end accounting, taxation, compliance, and advisory services across India and the UAE. With over a decade of expertise, we support startups, SMEs, and growing businesses with reliable, cost-effective, and cross-border financial solutions. We act as your trusted financial partner, ensuring accuracy, compliance, and sustainable business growth.
                     </p>
 
                     <div className="about-btn-container">
-                        <button className="about-btn" onClick={handleAboutUs}>Know More</button>
+                        <button className="about-btn" onClick={handleAboutUs}>
+                            Know More
+                        </button>
                         <span className="blue-circle"></span>
                     </div>
-                </div>
+                </motion.div>
 
-            </motion.div>
+            </div>
         </section>
     );
 };
