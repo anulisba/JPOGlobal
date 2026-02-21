@@ -48,7 +48,7 @@ const Footer = () => {
                                     </svg>
                                 </a>
 
-                                <a href="https://wa.me/971562511837" className="social-link">
+                                <a href="https://wa.me/919496177826" className="social-link">
                                     {/* WhatsApp Icon */}
                                     <svg className="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 
@@ -78,8 +78,7 @@ const Footer = () => {
                                         </svg>
                                         <div>
                                             <span className="contact-label">Email</span>
-                                            <span className="contact-value">info@jpoglobal.com</span>
-                                            <span className="contact-value">support@jpoglobal.com</span>
+                                            <span className="contact-value"> jpoglobal.info@gmail.com</span>
                                         </div>
                                     </li>
 
@@ -90,12 +89,11 @@ const Footer = () => {
                                         </svg>
                                         <div>
                                             <span className="contact-label">Phone</span>
-                                            <span className="contact-value">+971 56 251 1837</span>
-                                            <span className="contact-value">+91 97475 15517</span>
+                                            <span className="contact-value">+91 80755 95187</span>
                                         </div>
                                     </li>
 
-                                    <li className="contact-item">
+                                    {/* <li className="contact-item">
                                         <svg className="contact-icon" viewBox="0 0 24 24">
                                             <path d="M12 2C8.13 2 5 5.13 5 
                                             9c0 5.25 7 13 7 13s7-7.75 
@@ -106,7 +104,7 @@ const Footer = () => {
                                             <span className="contact-value">Al Qusais Industrial Area 2</span>
                                             <span className="contact-value">Dubai, UAE</span>
                                         </div>
-                                    </li>
+                                    </li> */}
 
                                     <li className="contact-item">
                                         <svg className="contact-icon" viewBox="0 0 24 24">
@@ -115,9 +113,13 @@ const Footer = () => {
                                             7-13c0-3.87-3.13-7-7-7z" />
                                         </svg>
                                         <div>
-                                            <span className="contact-label">India Office</span>
-                                            <span className="contact-value">Ernakulam, Kerala</span>
-                                            <span className="contact-value">Maradu, KNA Plaza, 3rd Floor</span>
+                                            <span className="contact-label">Indian Office</span>
+                                            <span className="contact-value">JPO Global Business Solutions Pvt Ltd.</span>
+                                            <span className="contact-value">First Floor, Golden Plaza Building </span>
+                                            <span className="contact-value">Angamaly, Ernakulam</span>
+
+
+                                            <span className="contact-value">Kerala – 683572</span>
                                         </div>
                                     </li>
 

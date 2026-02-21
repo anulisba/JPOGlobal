@@ -9,14 +9,14 @@ const founders = [
     {
         name: "Reshma Antony",
         role: "Managing Director",
-        image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1765012655/inspiring-new-boss_awi7e2.jpg", // replace with your path
+        image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1771655773/WhatsApp_Image_2026-02-07_at_8.53.33_PM_l7o86t.jpg", // replace with your path
         description:
             "Reshma Antony is a business and financial advisory leader with multi-entity experience across consulting, taxation, compliance, and investment services. She focuses on governance-driven structuring and sustainable business growth for startups, SMEs, and enterprises."
     },
     {
         name: "CA. Jismon Jose FCA",
         role: "Chief Consultant",
-        image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1765012655/inspiring-new-boss_awi7e2.jpg", // replace with your path
+        image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1771655773/WhatsApp_Image_2026-02-07_at_8.50.56_PM_dqzpif.jpg", // replace with your path
         description:
             "A Chartered Accountant with over 13 years of experience, CA. Jismon Jose specializes in taxation and corporate advisory. He has led complex assignments in direct and indirect taxation, compliance strategy, and regulatory consulting across multiple industries."
     }

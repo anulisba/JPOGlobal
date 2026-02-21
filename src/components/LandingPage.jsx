@@ -21,6 +21,7 @@ import { FaPaperPlane } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 // import lbg from '../assets/lbg.png'; // No longer needed
 import Plans from './Plans';
+import ChatBot from './chatbot';
 
 const SplashScreen = ({ onComplete }) => {
     useEffect(() => {
@@ -115,7 +116,7 @@ const LandingPage = () => {
     const [showSplash, setShowSplash] = useState(false);
     const [showContent, setShowContent] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [showPopup, setShowPopup] = useState(false);
+    const [showPopup, setShowPopup] = useState(true);
     const navigate = useNavigate();
 
     // Slide data: background images and text
@@ -165,19 +166,19 @@ const LandingPage = () => {
         }
     }, [showSplash, slides.length]);
 
-    useEffect(() => {
-        if (showContent) {
-            const popupShown = localStorage.getItem('popupShown');
-            if (!popupShown) {
-                const popupTimer = setTimeout(() => {
-                    setShowPopup(true);
-                    localStorage.setItem('popupShown', 'true');
-                }, 7000);
+    // useEffect(() => {
+    //     if (showContent) {
+    //         const popupShown = localStorage.getItem('popupShown');
+    //         if (!popupShown) {
+    //             const popupTimer = setTimeout(() => {
+    //                 setShowPopup(true);
+    //                 localStorage.setItem('popupShown', 'true');
+    //             }, 7000);
 
-                return () => clearTimeout(popupTimer);
-            }
-        }
-    }, [showContent]);
+    //             return () => clearTimeout(popupTimer);
+    //         }
+    //     }
+    // }, [showContent]);
 
     useEffect(() => {
         const clearOnExit = () => {
@@ -202,95 +203,99 @@ const LandingPage = () => {
                 {showSplash ? (
                     <SplashScreen onComplete={handleSplashComplete} />
                 ) : (
-                    <motion.div
-                        className="landing-page-container"
-                        initial={{ y: "100vh" }}
-                        animate={{ y: 0 }}
-                        exit={{ y: "-100vh" }}
-                        transition={{ duration: 3, ease: [0.10, 1, 0.36, 1] }}
-                    >
-                        {showContent && (
-                            <>
-                                <Header />
+                    <>
+                        <motion.div
+                            className="landing-page-container"
+                            initial={{ y: "100vh" }}
+                            animate={{ y: 0 }}
+                            exit={{ y: "-100vh" }}
+                            transition={{ duration: 3, ease: [0.10, 1, 0.36, 1] }}
+                        >
+                            {showContent && (
+                                <>
+                                    <Header />
 
-                                {/* LANDING SECTION WITH BACKGROUND SLIDER */}
-                                <section className="landing-section">
-                                    <div className="slider-wrapper">
-                                        <AnimatePresence>
-                                            <motion.div
-                                                key={currentIndex}
-                                                className="slide"
-                                                initial={{ x: '100%' }}
-                                                animate={{ x: 0 }}
-                                                exit={{ x: '-100%' }}
-                                                transition={{ duration: 1, ease: 'easeInOut' }}
-                                                style={{
-                                                    backgroundImage: `url(${slides[currentIndex].bgImage})`,
-                                                }}
-                                            >
-                                                <div className='slide-overlay'>
-                                                    <div className="slide-content">
-                                                        <h4
-                                                            className="welcome"
-                                                            dangerouslySetInnerHTML={{ __html: slides[currentIndex].welcome }}
-                                                        />
-                                                        <h1
-                                                            className="landing-title"
-                                                            dangerouslySetInnerHTML={{ __html: slides[currentIndex].title }}
-                                                        />
-                                                        <p className="landing-desc">{slides[currentIndex].desc}</p>
+                                    {/* LANDING SECTION WITH BACKGROUND SLIDER */}
+                                    <section className="landing-section">
+                                        <div className="slider-wrapper">
+                                            <AnimatePresence>
+                                                <motion.div
+                                                    key={currentIndex}
+                                                    className="slide"
+                                                    initial={{ x: '100%' }}
+                                                    animate={{ x: 0 }}
+                                                    exit={{ x: '-100%' }}
+                                                    transition={{ duration: 1, ease: 'easeInOut' }}
+                                                    style={{
+                                                        backgroundImage: `url(${slides[currentIndex].bgImage})`,
+                                                    }}
+                                                >
+                                                    <div className='slide-overlay'>
+                                                        <div className="slide-content">
+                                                            <h4
+                                                                className="welcome"
+                                                                dangerouslySetInnerHTML={{ __html: slides[currentIndex].welcome }}
+                                                            />
+                                                            <h1
+                                                                className="landing-title"
+                                                                dangerouslySetInnerHTML={{ __html: slides[currentIndex].title }}
+                                                            />
+                                                            <p className="landing-desc">{slides[currentIndex].desc}</p>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </motion.div>
-                                        </AnimatePresence>
-                                    </div>
-                                </section>
-                                {/* FINANCE SCROLLER SECTION */}
-                                <section className="finance-scroller">
-                                    <div className="scroller-wrapper">
-                                        <div className="scroller-content">
-                                            <span>
-                                                • Accounting & Bookkeeping • Taxation Services (VAT & Corporate Tax) •
-                                                Audit & Assurance • Financial Planning & Analysis (FP&A) •
-                                                CFO & Strategic Financial Advisory • Payroll Management •
-                                                Business Setup & Compliance (Mainland & Free Zone) •
-                                            </span>
-
-                                            <span>
-                                                • Accounting & Bookkeeping • Taxation Services (VAT & Corporate Tax) •
-                                                Audit & Assurance • Financial Planning & Analysis (FP&A) •
-                                                CFO & Strategic Financial Advisory • Payroll Management •
-                                                Business Setup & Compliance (Mainland & Free Zone) •
-                                            </span>
+                                                </motion.div>
+                                            </AnimatePresence>
                                         </div>
-                                    </div>
-                                </section>
+                                    </section>
+                                    {/* FINANCE SCROLLER SECTION */}
+                                    <section className="finance-scroller">
+                                        <div className="scroller-wrapper">
+                                            <div className="scroller-content">
+                                                <span>
+                                                    • Accounting & Bookkeeping • Taxation Services (VAT & Corporate Tax) •
+                                                    Audit & Assurance • Financial Planning & Analysis (FP&A) •
+                                                    CFO & Strategic Financial Advisory • Payroll Management •
+                                                    Business Setup & Compliance (Mainland & Free Zone) •
+                                                </span>
+
+                                                <span>
+                                                    • Accounting & Bookkeeping • Taxation Services (VAT & Corporate Tax) •
+                                                    Audit & Assurance • Financial Planning & Analysis (FP&A) •
+                                                    CFO & Strategic Financial Advisory • Payroll Management •
+                                                    Business Setup & Compliance (Mainland & Free Zone) •
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </section>
 
 
-                                <section id='about-us'>
-                                    <AboutUs />
-                                </section>
-                                {/* <ReportCounter /> */}
-                                <OurServices />
-
-                                {/* <section id='projects'>
+                                    <section id='about-us'>
+                                        <AboutUs />
+                                    </section>
+                                    {/* <ReportCounter /> */}
+                                    <section id='about-us'>
+                                        <OurServices />
+                                    </section>
+                                    {/* <section id='projects'>
                                     <Plans />
                                 </section> */}
-                                {/* <section id='workflow'>
+                                    {/* <section id='workflow'>
                                     <OurWorkFlow />
                                 </section>
                                 <section id='reviews'>
                                     <CustomerReviews />
                                 </section> */}
-                                <section id='contact'>
-                                    <ContactLandingSection />
-                                </section>
-                                <section id='footer'>
-                                    <Footer />
-                                </section>
-                            </>
-                        )}
-                    </motion.div>
+                                    <section id='contact'>
+                                        <ContactLandingSection />
+                                    </section>
+                                    <section id='footer'>
+                                        <Footer />
+                                    </section>
+                                </>
+                            )}
+                        </motion.div>
+                        <ChatBot />
+                    </>
                 )}
             </AnimatePresence>
             <AnimatePresence>
@@ -298,6 +303,7 @@ const LandingPage = () => {
                     <ContactPopup onClose={() => setShowPopup(false)} />
                 )}
             </AnimatePresence>
+
         </div>
     );
 };

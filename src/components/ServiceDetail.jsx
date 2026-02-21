@@ -14,7 +14,7 @@ const ServiceDetail = () => {
         {
             id: 0,
             name: "Accounting & Bookkeeping",
-            image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1758969828/Untitled_design_16_pau0vh.png",
+            image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1771656442/young-business-lady-female-director-sitting-office-desk-working-process-business-meeting-working-with-colleague-solving-business-tasks-office-collective-concept_gzdtst.jpg",
             description:
                 "Comprehensive accounting and bookkeeping services ensuring accurate financial records, IFRS compliance, and real-time visibility into your business performance.",
             details: [
@@ -35,7 +35,7 @@ const ServiceDetail = () => {
         {
             id: 1,
             name: "Taxation Services",
-            image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1758211588/Untitled_design_7_kdxdg3.png",
+            image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1771656158/tax-credits-claim-return-deduction-refund-concept_p2sclt.jpg",
             description:
                 "Expert VAT and Corporate Tax services designed to ensure UAE Federal Tax Authority (FTA) compliance, reduce liabilities, and optimize tax planning.",
             details: [
@@ -56,7 +56,7 @@ const ServiceDetail = () => {
         {
             id: 2,
             name: "Audit & Assurance",
-            image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1758211584/Untitled_design_6_mxnxvp.png",
+            image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1771656440/people-analyzing-checking-finance-graphs-office_itg3kn.jpg",
             description:
                 "Independent audit and assurance services that strengthen financial accuracy, internal controls, and compliance with UAE regulatory standards.",
             details: [
@@ -77,7 +77,7 @@ const ServiceDetail = () => {
         {
             id: 3,
             name: "Financial Planning & Analysis (FP&A)",
-            image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1758211584/Untitled_design_5_lrkizr.png",
+            image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1771656804/top-view-business-people-working-with-ipad_x0vvb5.jpg",
             description:
                 "Advanced financial planning and analytical insights that help businesses make data-driven decisions and prepare for future growth.",
             details: [
@@ -98,7 +98,7 @@ const ServiceDetail = () => {
         {
             id: 4,
             name: "CFO & Strategic Financial Advisory",
-            image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1758211245/Untitled_design_3_nlukvw.png",
+            image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1771656805/researchers-looking-alternative-energy-souces_omuhoq.jpg",
             description:
                 "High-level financial strategy and advisory services that help businesses improve profitability, strengthen financial structure, and scale sustainably.",
             details: [
@@ -119,7 +119,7 @@ const ServiceDetail = () => {
         {
             id: 5,
             name: "Payroll Management",
-            image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1758211246/Untitled_design_1_md5qqz.png",
+            image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1771656804/front-view-young-beautiful-lady-grey-shirt-working-her-pc-looking-through-documents-sitting-inside-her-office-daytime-building-job-activity_jfuowy.jpg",
             description:
                 "Accurate, secure, and on-time payroll processing with complete compliance to UAE labor and tax regulations.",
             details: [
@@ -140,7 +140,7 @@ const ServiceDetail = () => {
         {
             id: 6,
             name: "Business Setup & Compliance",
-            image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1758211245/Untitled_design_4_xvcpez.png",
+            image: "https://res.cloudinary.com/dpo91btlc/image/upload/v1771656808/unrecognizable-businesspeople-studying-statistics-holding-papers-with-hands_dmpslj.jpg",
             description:
                 "End-to-end support for company formation, licensing, and compliance in UAE mainland and free zones, ensuring a smooth business setup process.",
             details: [

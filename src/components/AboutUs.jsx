@@ -10,6 +10,15 @@ const AboutUs = () => {
         navigate('/about-us');
     };
 
+    const fadeUp = {
+        hidden: { opacity: 0, y: 40 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.8, ease: "easeOut" }
+        }
+    };
+
     return (
         <section id="about-us" className="about-us-section">
             <div className="about-us-container">
@@ -17,9 +26,9 @@ const AboutUs = () => {
                 {/* Left Image Section */}
                 <motion.div
                     className="image-content"
-                    initial={{ x: -100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
                     viewport={{ once: false, amount: 0.3 }}
                 >
                     <div className="main-image">
@@ -33,9 +42,9 @@ const AboutUs = () => {
                 {/* Right Text Section */}
                 <motion.div
                     className="about-text-content"
-                    initial={{ x: 100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
                     viewport={{ once: false, amount: 0.3 }}
                 >
                     <span className="about-subtitle">About Us</span>
@@ -45,7 +54,12 @@ const AboutUs = () => {
                     <div className="service-name-line"></div>
 
                     <p className="about-description">
-                        JPO Global Business Solutions Pvt. Ltd. provides end-to-end accounting, taxation, compliance, and advisory services across India and the UAE. With over a decade of expertise, we support startups, SMEs, and growing businesses with reliable, cost-effective, and cross-border financial solutions. We act as your trusted financial partner, ensuring accuracy, compliance, and sustainable business growth.
+                        JPO Global Business Solutions Pvt. Ltd. provides end-to-end accounting,
+                        taxation, compliance, and advisory services across India and the UAE.
+                        With over a decade of expertise, we support startups, SMEs, and growing
+                        businesses with reliable, cost-effective, and cross-border financial
+                        solutions. We act as your trusted financial partner, ensuring accuracy,
+                        compliance, and sustainable business growth.
                     </p>
 
                     <div className="about-btn-container">

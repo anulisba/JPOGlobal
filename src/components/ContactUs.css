@@ -261,7 +261,7 @@
 }
 
 .office-address {
-    color: var(--text-light);
+    color: var(--text-dark);
     line-height: 1.6;
     margin-bottom: 15px;
     font-size: 0.95rem;
@@ -418,7 +418,7 @@
 }
 
 .form-header p {
-    color: var(--text-light);
+    color: var(--text-dark);
     font-size: 1rem;
 }
 
@@ -494,7 +494,7 @@
 
 .char-count {
     text-align: right;
-    color: var(--text-light);
+    color: var(--text-dark);
     font-size: 0.85rem;
     margin-top: 5px;
 }
@@ -572,7 +572,7 @@
 
 .form-note {
     text-align: center;
-    color: var(--text-light);
+    color: var(--text-dark);
     font-size: 0.9rem;
     margin-top: 20px;
     padding-top: 20px;

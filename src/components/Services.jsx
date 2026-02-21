@@ -12,25 +12,15 @@ const OurServices = () => {
     const navigate = useNavigate();
 
     const handleKnowmore = () => {
-        navigate('/services');
+        navigate("/services");
     };
 
-    // Parent animation (stagger)
-    const containerVariants = {
-        hidden: {},
-        visible: {
-            transition: {
-                staggerChildren: 0.25
-            }
-        }
-    };
-
-    // Individual card animation
+    // SAFE animation (no translate on parent wrappers)
     const cardVariants = {
-        hidden: { y: 50, opacity: 0 },
+        hidden: { opacity: 0, y: 40 },
         visible: {
-            y: 0,
             opacity: 1,
+            y: 0,
             transition: { duration: 0.6, ease: "easeOut" }
         }
     };
@@ -39,16 +29,16 @@ const OurServices = () => {
         <section className="services-wrapper">
 
             {/* FIRST ROW */}
-            <motion.div
-                className="services-row-1"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.2 }}
-            >
+            <div className="services-row-1">
 
                 {/* LEFT TEXT SECTION */}
-                <motion.div className="services-left" variants={cardVariants}>
+                <motion.div
+                    className="services-left"
+                    variants={cardVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.2 }}
+                >
                     <h4 className="service-sub">Our Services</h4>
                     <h1 className="service-title">
                         Real Solutions,<br />Real Impact
@@ -59,7 +49,13 @@ const OurServices = () => {
                 </motion.div>
 
                 {/* CARD 1 */}
-                <motion.div className="service-card bg-gray" variants={cardVariants}>
+                <motion.div
+                    className="service-card bg-gray"
+                    variants={cardVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.2 }}
+                >
                     <div className="service-icon"><HiOutlineDocumentReport /></div>
                     <h3 className="service-head">Accounting & Bookkeeping</h3>
                     <p className="service-desc">
@@ -70,7 +66,13 @@ const OurServices = () => {
                 </motion.div>
 
                 {/* CARD 2 */}
-                <motion.div className="service-card bg-blue" variants={cardVariants}>
+                <motion.div
+                    className="service-card bg-blue"
+                    variants={cardVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.2 }}
+                >
                     <div className="service-icon"><RiShieldCheckLine /></div>
                     <h3 className="service-head">Audit & Assurance</h3>
                     <p className="service-desc">
@@ -78,19 +80,19 @@ const OurServices = () => {
                         checks ensuring transparency, accuracy, and adherence to UAE regulations.
                     </p>
                 </motion.div>
-            </motion.div>
 
+            </div>
 
             {/* SECOND ROW */}
-            <motion.div
-                className="services-row-2"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.2 }}
-            >
+            <div className="services-row-2">
 
-                <motion.div className="service-card bg-gray" variants={cardVariants}>
+                <motion.div
+                    className="service-card bg-gray"
+                    variants={cardVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.2 }}
+                >
                     <div className="service-icon"><MdOutlineCalculate /></div>
                     <h3 className="service-head">Taxation Services</h3>
                     <p className="service-desc">
@@ -99,7 +101,13 @@ const OurServices = () => {
                     </p>
                 </motion.div>
 
-                <motion.div className="service-card bg-blue" variants={cardVariants}>
+                <motion.div
+                    className="service-card bg-blue"
+                    variants={cardVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.2 }}
+                >
                     <div className="service-icon"><TbReportAnalytics /></div>
                     <h3 className="service-head">Financial Planning & Analysis</h3>
                     <p className="service-desc">
@@ -108,7 +116,13 @@ const OurServices = () => {
                     </p>
                 </motion.div>
 
-                <motion.div className="service-card bg-gray" variants={cardVariants}>
+                <motion.div
+                    className="service-card bg-gray"
+                    variants={cardVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.2 }}
+                >
                     <div className="service-icon"><BsGraphUp /></div>
                     <h3 className="service-head">Financial Management & Advisory</h3>
                     <p className="service-desc">
@@ -117,7 +131,7 @@ const OurServices = () => {
                     </p>
                 </motion.div>
 
-            </motion.div>
+            </div>
 
         </section>
     );

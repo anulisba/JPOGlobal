@@ -18,7 +18,7 @@ const ContactSection = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [activeMap, setActiveMap] = useState('dubai');
+    const [activeMap, setActiveMap] = useState('kerala');
     const [activeField, setActiveField] = useState(null);
 
     const handleChange = (e) => {
@@ -34,36 +34,70 @@ const ContactSection = () => {
         setActiveField(null);
     };
 
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     setIsSubmitting(true);
+
+    //     emailjs.send(
+    //         'service_6c6do5l',
+    //         'template_4t6imcx',
+    //         {
+    //             name: formData.name,
+    //             email: formData.email,
+    //             phone: formData.phone,
+    //             title: formData.subject,
+    //             message: formData.message,
+    //             to_email: 'abhisplanet2025@gmail.com'
+    //         },
+    //         'zQ4O3aRATuQjHFFMg'
+    //     ).then(() => {
+    //         setIsSubmitted(true);
+    //         setIsSubmitting(false);
+    //         setFormData({
+    //             name: '',
+    //             email: '',
+    //             phone: '',
+    //             subject: '',
+    //             message: ''
+    //         });
+    //     }).catch((error) => {
+    //         console.error('Failed to send message:', error);
+    //         setIsSubmitting(false);
+    //         alert('Failed to send message. Please try again later.');
+    //     });
+    // };
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        emailjs.send(
-            'service_6c6do5l',
-            'template_4t6imcx',
-            {
-                name: formData.name,
-                email: formData.email,
-                phone: formData.phone,
-                title: formData.subject,
-                message: formData.message,
-                to_email: 'abhisplanet2025@gmail.com'
-            },
-            'zQ4O3aRATuQjHFFMg'
-        ).then(() => {
-            setIsSubmitted(true);
-            setIsSubmitting(false);
-            setFormData({
-                name: '',
-                email: '',
-                phone: '',
-                subject: '',
-                message: ''
-            });
-        }).catch((error) => {
-            console.error('Failed to send message:', error);
-            setIsSubmitting(false);
-            alert('Failed to send message. Please try again later.');
+        const phoneNumber = "919496177826";
+        // Add country code (91 for India) and remove spaces
+
+        const message = `
+New Contact Form Submission:
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Subject: ${formData.subject}
+Message: ${formData.message}
+    `;
+
+        const encodedMessage = encodeURIComponent(message);
+
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+        window.open(whatsappURL, "_blank");
+
+        setIsSubmitted(true);
+        setIsSubmitting(false);
+
+        setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            subject: '',
+            message: ''
         });
     };
 
@@ -115,7 +149,7 @@ const ContactSection = () => {
                                 <div className="contact-info-grid">
                                     {/* Dubai Office */}
                                     <div className='office-loc'>
-                                        <motion.div
+                                        {/* <motion.div
                                             className="office-card"
                                             whileHover={{ y: -5, transition: { duration: 0.3 } }}
                                         >
@@ -133,7 +167,7 @@ const ContactSection = () => {
                                             <div className="office-contact">
                                                 <FaPhone /> <span>+971 56 251 1837</span>
                                             </div>
-                                        </motion.div>
+                                        </motion.div> */}
 
                                         {/* Kerala Office */}
                                         <motion.div
@@ -148,12 +182,17 @@ const ContactSection = () => {
                                             </div>
                                             <h3>Kerala Office</h3>
                                             <p className="office-address">
-                                                JPO Global<br />
-                                                Angamaly, Ernakulam - 682304<br />
-                                                Kerala, India
+                                                JPO Global Business Solutions Pvt Ltd.<br />
+                                                First Floor, Golden Plaza Building,<br />
+                                                Angamaly, Ernakulam<br />
+                                                Kerala – 683572<br />
                                             </p>
                                             <div className="office-contact">
-                                                <FaPhone /> <span>+91 97475 15517</span>
+                                                <FaPhone /> <span>+91 80755 95187</span><br></br>
+
+                                            </div>
+                                            <div className="office-contact">
+                                                <FaEnvelope /> <span> jpoglobal.info@gmail.com</span>
                                             </div>
                                         </motion.div>
                                     </div>
@@ -186,12 +225,12 @@ const ContactSection = () => {
                                     <div className="map-header">
                                         <h3>Visit Our Office</h3>
                                         <div className="map-switcher">
-                                            <button
+                                            {/* <button
                                                 className={`map-switch-btn ${activeMap === 'dubai' ? 'active' : ''}`}
                                                 onClick={() => setActiveMap('dubai')}
                                             >
                                                 Dubai Location
-                                            </button>
+                                            </button> */}
                                             <button
                                                 className={`map-switch-btn ${activeMap === 'kerala' ? 'active' : ''}`}
                                                 onClick={() => setActiveMap('kerala')}
