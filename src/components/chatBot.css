@@ -6,7 +6,7 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #1e3a8a;
+    background: var(--secondary-color);
     color: white;
     width: 55px;
     height: 55px;
@@ -142,7 +142,7 @@
 ================================ */
 
 .chat-header {
-    background: #1e3a8a;
+    background: var(--secondary-color);
     color: white;
     padding: 16px;
 }
@@ -205,7 +205,7 @@
 }
 
 .chat-message.user {
-    background: #1e3a8a;
+    background: var(--secondary-color);
     color: white;
     align-self: flex-end;
 }
@@ -259,7 +259,7 @@
 }
 
 .chat-input button {
-    background: #1e3a8a;
+    background: var(--secondary-color);
     color: white;
     border: none;
     padding: 0 16px;
