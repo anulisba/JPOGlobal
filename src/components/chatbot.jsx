@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import "./ChatBot.css";
+import "./chatBot.css";
 import { FaComments, FaTimes } from "react-icons/fa";
 
 const mainMenu = [
