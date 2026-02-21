@@ -67,50 +67,50 @@ const SplashScreen = ({ onComplete }) => {
     );
 };
 
-const ContactPopup = ({ onClose, onSelectLocation }) => {
-    return (
-        <motion.div
-            className="contact-popup-overlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-        >
-            <motion.div
-                className="contact-popup-box"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.8, opacity: 0 }}
-                transition={{ type: "spring", damping: 25 }}
-            >
-                <button className="contact-popup-close-btn" onClick={onClose}>✕</button>
+// const ContactPopup = ({ onClose, onSelectLocation }) => {
+//     return (
+//         <motion.div
+//             className="contact-popup-overlay"
+//             initial={{ opacity: 0 }}
+//             animate={{ opacity: 1 }}
+//             exit={{ opacity: 0 }}
+//         >
+//             <motion.div
+//                 className="contact-popup-box"
+//                 initial={{ scale: 0.8, opacity: 0 }}
+//                 animate={{ scale: 1, opacity: 1 }}
+//                 exit={{ scale: 0.8, opacity: 0 }}
+//                 transition={{ type: "spring", damping: 25 }}
+//             >
+//                 <button className="contact-popup-close-btn" onClick={onClose}>✕</button>
 
-                <h2>Choose Your Location</h2>
-                <p>Select the region you want to explore.</p>
+//                 <h2>Choose Your Location</h2>
+//                 <p>Select the region you want to explore.</p>
 
-                <motion.div
-                    className="location-select-container"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <button
-                        className="location-btn india"
-                        onClick={() => onSelectLocation("India")}
-                    >
-                        🇮🇳 India
-                    </button>
+//                 <motion.div
+//                     className="location-select-container"
+//                     initial={{ opacity: 0, y: 20 }}
+//                     animate={{ opacity: 1, y: 0 }}
+//                     transition={{ duration: 0.5 }}
+//                 >
+//                     <button
+//                         className="location-btn india"
+//                         onClick={() => onSelectLocation("India")}
+//                     >
+//                         🇮🇳 India
+//                     </button>
 
-                    <button
-                        className="location-btn dubai"
-                        onClick={() => onSelectLocation("Dubai")}
-                    >
-                        🇦🇪 Dubai
-                    </button>
-                </motion.div>
-            </motion.div>
-        </motion.div>
-    );
-};
+//                     <button
+//                         className="location-btn dubai"
+//                         onClick={() => onSelectLocation("Dubai")}
+//                     >
+//                         🇦🇪 Dubai
+//                     </button>
+//                 </motion.div>
+//             </motion.div>
+//         </motion.div>
+//     );
+// };
 
 const LandingPage = () => {
     const [showSplash, setShowSplash] = useState(false);
@@ -298,11 +298,11 @@ const LandingPage = () => {
                     </>
                 )}
             </AnimatePresence>
-            <AnimatePresence>
+            {/* <AnimatePresence>
                 {showPopup && (
                     <ContactPopup onClose={() => setShowPopup(false)} />
                 )}
-            </AnimatePresence>
+            </AnimatePresence> */}
 
         </div>
     );
