@@ -358,7 +358,7 @@ const ServiceDetail = () => {
             </section> */}
             <JpoOurWorkFlow />
 
-            <section className="service-page-plans-section">
+            {/* <section className="service-page-plans-section">
                 <div className="service-page-plans-container">
                     <div className="service-page-plans-header">
                         <h4 className="service-page-plans-sub">Our Packages</h4>
@@ -397,7 +397,7 @@ const ServiceDetail = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
             {/* Why Choose Us Section */}
             {/* < section className="why-choose-service" >
                 <div className="container">
